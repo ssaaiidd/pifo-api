@@ -10,6 +10,7 @@ import (
 )
 
 var (
+	port := os.Getenv("PORT")
 	secret   = os.Getenv("FAUNA_ENV")
 	endpoint = f.Endpoint("https://db.eu.fauna.com")
 
@@ -111,5 +112,5 @@ func main() {
 	router.POST("/notes", createNote)
 	router.POST("/notes/:id", updateNote)
 
-	router.Run("localhost:8080")
+	router.Run(":" + port)
 }
