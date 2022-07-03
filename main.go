@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 
@@ -9,8 +10,7 @@ import (
 )
 
 var (
-	//secret   = os.Getenv("FAUNA_ENV")
-	secret   = "fnAEqmZg3sAAx4rLFCX5hfKJExkPtpt6VW_loZCI"
+	secret   = os.Getenv("FAUNA_ENV")
 	endpoint = f.Endpoint("https://db.eu.fauna.com")
 
 	dbClient = f.NewFaunaClient(secret, endpoint)
