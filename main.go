@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	port := os.Getenv("PORT")
+	port     = os.Getenv("PORT")
 	secret   = os.Getenv("FAUNA_ENV")
 	endpoint = f.Endpoint("https://db.eu.fauna.com")
 
